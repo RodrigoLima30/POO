@@ -124,14 +124,23 @@ class ContaBancaria {
     this.saldo -= valor;
   }
 }
+```
 
+### Criando objetos:
 
-Criando objetos:
+```js
 
 const contaRodrigo = new ContaBancaria("Rodrigo", 1000);
 const contaMaria = new ContaBancaria("Maria", 500);
 
-📌 Exemplo em TypeScript
+```
+
+---
+
+### 📌 Exemplo em TypeScript
+
+```js
+
 class ContaBancaria {
   titular: string;
   saldo: number;
@@ -146,24 +155,34 @@ class ContaBancaria {
   }
 }
 
-✅ Vantagens do TypeScript
+```
+---
 
-Tipagem estática
+### ✅ Vantagens do TypeScript
 
-Menos bugs
+- Tipagem estática
 
-Autocomplete
+- Menos bugs
 
-Código mais confiável e profissional
+- Autocomplete
 
-2️⃣ Encapsulamento
-📌 Conceito
+- Código mais confiável e profissional
+
+--- 
+
+## 2️⃣ Encapsulamento
+
+### 📌 Conceito
 
 Encapsulamento significa proteger os dados internos da classe e permitir acesso apenas por métodos controlados.
 
 No mundo real, você não altera o saldo direto — você deposita ou saca.
 
-📌 Encapsulamento em JavaScript
+### 📌 Encapsulamento em JavaScript
+
+
+```js
+
 class ContaBancaria {
   constructor(titular, saldo) {
     this.titular = titular;
@@ -174,11 +193,14 @@ class ContaBancaria {
     return this._saldo;
   }
 }
+```
 
+### ⚠️ Em JS, _saldo é apenas uma convenção.
 
-⚠️ Em JS, _saldo é apenas uma convenção.
+### 📌 Encapsulamento em TypeScript
 
-📌 Encapsulamento em TypeScript
+```js
+
 class ContaBancaria {
   public titular: string;
   private saldo: number;
@@ -195,44 +217,60 @@ class ContaBancaria {
 
 conta.saldo;      // ❌ Erro
 conta.getSaldo(); // ✅ Correto
+// 
+```
 
-3️⃣ Herança
-📌 Conceito
+---
+
+## 3️⃣ Herança
+### 📌 Conceito
 
 Herança permite que uma classe herde atributos e métodos de outra classe.
 
 Evita duplicação e melhora reutilização.
 
-💡 Exemplo do mundo real
+### 💡 Exemplo do mundo real
 
-ContaBancaria
+-ContaBancaria
 
-ContaCorrente
+-ContaCorrente
 
-ContaPoupanca
+-ContaPoupanca
 
-📌 Herança em JavaScript
+### 📌 Herança em JavaScript
+
+```js
 class ContaCorrente extends ContaBancaria {
   sacar(valor) {
     const taxa = 2;
     super.sacar(valor + taxa);
   }
 }
+```
 
-📌 Herança em TypeScript
+### 📌 Herança em TypeScript
+
+```js
 class ContaCorrente extends ContaBancaria {
   sacar(valor: number): void {
     const taxa = 2;
     super.sacar(valor + taxa);
   }
 }
+```
 
-4️⃣ Polimorfismo
-📌 Conceito
+---
+
+## 4️⃣ Polimorfismo
+
+### 📌 Conceito
 
 Polimorfismo significa que objetos diferentes respondem de forma diferente ao mesmo método.
 
-📌 Exemplo em TypeScript
+### 📌 Exemplo em TypeScript
+
+```js
+
 class Order {
   calculateTotal(): number {
     return 0;
@@ -255,24 +293,25 @@ function checkout(order: Order) {
   console.log(order.calculateTotal());
 }
 
+```
 
 A função não precisa saber o tipo exato do objeto.
 
-🧠 Como pensar em POO no dia a dia
-🧩 Modelagem de domínio
+### 🧠 Como pensar em POO no dia a dia
+### 🧩 Modelagem de domínio
 
 Transforme regras de negócio em classes.
 
-🧭 Responsabilidades
+### 🧭 Responsabilidades
 
 Cada classe deve ter uma responsabilidade clara.
 
-🧱 Separação de interesses
+### 🧱 Separação de interesses
 
 Não misture:
 
-Regra de negócio
+-Regra de negócio
 
-Acesso a dados
+-Acesso a dados
 
-Interface
+-Interface
